@@ -1,5 +1,8 @@
 # Membedah Big O Notation: Mengukur Efisiensi Kode Anda 🧐
 
+<img width="2877" height="1142" alt="image" src="https://github.com/user-attachments/assets/11bcc023-b556-4c10-9d3a-127634b81dc3" />
+
+
 Pernahkah Anda bertanya-tanya mengapa beberapa program berjalan secepat kilat sementara yang lain terasa sangat lambat? Jawabannya sering kali terletak pada bagaimana kode tersebut ditulis dan seberapa efisien algoritmanya. Di sinilah **Big O Notation** berperan sebagai alat ukur yang sangat penting.
 
 Big O Notation adalah cara matematis untuk mendeskripsikan efisiensi suatu algoritma. Secara spesifik, notasi ini mengukur **skenario terburuk (worst-case)** dari sebuah algoritma, yaitu berapa lama waktu (kompleksitas waktu) atau berapa banyak memori (kompleksitas ruang) yang dibutuhkan seiring dengan bertambahnya jumlah input.
