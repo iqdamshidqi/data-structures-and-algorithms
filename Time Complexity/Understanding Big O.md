@@ -5,22 +5,22 @@
 
 Pernahkah Anda bertanya-tanya mengapa beberapa program berjalan secepat kilat sementara yang lain terasa sangat lambat? Jawabannya sering kali terletak pada bagaimana kode tersebut ditulis dan seberapa efisien algoritmanya. Di sinilah **Big O Notation** berperan sebagai alat ukur yang sangat penting.
 
-[cite\_start]Big O Notation adalah cara matematis untuk mendeskripsikan efisiensi suatu algoritma[cite: 14, 309]. [cite\_start]Secara spesifik, notasi ini mengukur **skenario terburuk (worst-case)** dari sebuah algoritma, yaitu berapa lama waktu (kompleksitas waktu) atau berapa banyak memori (kompleksitas ruang) yang dibutuhkan seiring dengan bertambahnya jumlah input[cite: 309, 310, 311].
+Big O Notation adalah cara matematis untuk mendeskripsikan efisiensi suatu algoritma. Secara spesifik, notasi ini mengukur **skenario terburuk (worst-case)** dari sebuah algoritma, yaitu berapa lama waktu (kompleksitas waktu) atau berapa banyak memori (kompleksitas ruang) yang dibutuhkan seiring dengan bertambahnya jumlah input.
 
-[cite\_start]Alih-alih mengukur dalam detik atau byte (yang bisa berbeda tergantung pada perangkat keras), Big O menggunakan ekspresi matematika untuk menggambarkan bagaimana kinerja algoritma berubah saat ukuran input (`n`) meningkat[cite: 312, 314].
+Alih-alih mengukur dalam detik atau byte (yang bisa berbeda tergantung pada perangkat keras), Big O menggunakan ekspresi matematika untuk menggambarkan bagaimana kinerja algoritma berubah saat ukuran input (`n`) meningkat.
 
 -----
 
-### Tipe-Tipe Umum Kompleksitas Big O
+## Tipe-Tipe Umum Kompleksitas Big O
 
 Mari kita lihat beberapa jenis Big O yang paling umum, diurutkan dari yang tercepat hingga yang paling lambat.
 
-#### 1\. $O(1)$ — Constant Time (Waktu Konstan) ⚡️
+### 1\. $O(1)$ — Constant Time (Waktu Konstan) ⚡️
 
 Ini adalah "juara" efisiensi. Algoritma dengan kompleksitas $O(1)$ membutuhkan waktu yang **sama** untuk selesai, tidak peduli seberapa besar ukuran inputnya.
 
   * **Analogi:** Seperti mengambil buku dari rak jika Anda sudah tahu persis nomor urutnya. Tidak peduli ada 10 buku atau 1.000 buku di rak itu, waktu yang Anda butuhkan untuk mengambilnya tetap sama.
-  * [cite\_start]**Contoh Kode:** Mengakses elemen dalam sebuah list menggunakan indeksnya[cite: 328, 329].
+  * **Contoh Kode:** Mengakses elemen dalam sebuah list menggunakan indeksnya.
 
 <!-- end list -->
 
@@ -36,7 +36,7 @@ def constant_example(items):
 constant_example(colors)
 ```
 
-#### 2\. $O(\\log n)$ — Logarithmic Time (Waktu Logaritmik) 🚀
+### 2\. $O(\\log n)$ — Logarithmic Time (Waktu Logaritmik) 🚀
 
 Ini adalah kompleksitas yang sangat efisien. Waktu eksekusinya meningkat sangat lambat seiring bertambahnya input. Algoritma ini bekerja dengan memotong separuh dari total data pada setiap langkahnya (prinsip "divide and conquer").
 
@@ -64,12 +64,12 @@ numbers = [1, 5, 8, 10, 12, 15, 20, 22, 30]
 print(binary_search(numbers, 15))
 ```
 
-#### 3\. $O(n)$ — Linear Time (Waktu Linier) 🏃
+### 3\. $O(n)$ — Linear Time (Waktu Linier) 🏃
 
-[cite\_start]Kinerja algoritma ini tumbuh secara **linier** (lurus) seiring dengan bertambahnya ukuran input (`n`)[cite: 374]. Jika input bertambah dua kali lipat, waktunya juga akan bertambah sekitar dua kali lipat.
+Kinerja algoritma ini tumbuh secara **linier** (lurus) seiring dengan bertambahnya ukuran input (`n`). Jika input bertambah dua kali lipat, waktunya juga akan bertambah sekitar dua kali lipat.
 
   * **Analogi:** Membaca judul setiap buku di satu rak untuk menemukan buku tertentu. Semakin banyak buku di rak (`n`), semakin lama waktu yang Anda butuhkan.
-  * [cite\_start]**Contoh Kode:** Melakukan iterasi (looping) pada semua elemen dalam sebuah list[cite: 344, 345].
+  * **Contoh Kode:** Melakukan iterasi (looping) pada semua elemen dalam sebuah list.
 
 <!-- end list -->
 
@@ -85,7 +85,7 @@ def linear_example(items):
 linear_example(colors)
 ```
 
-#### 4\. $O(n \\log n)$ — Log-Linear Time (Waktu Log-Linier) ✨
+### 4\. $O(n \\log n)$ — Log-Linear Time (Waktu Log-Linier) ✨
 
 Ini adalah titik terbaik untuk algoritma pengurutan (sorting) yang efisien. Kompleksitas ini lebih cepat dari $O(n^2)$ dan sering ditemukan pada algoritma yang memecah masalah menjadi bagian-bagian yang lebih kecil, menyelesaikannya secara terpisah, lalu menggabungkannya kembali.
 
@@ -102,12 +102,12 @@ my_list.sort() # Operasi ini secara internal sangat efisien
 print(my_list)
 ```
 
-#### 5\. $O(n^2)$ — Quadratic Time (Waktu Kuadratik) 🐢
+### 5\. $O(n^2)$ — Quadratic Time (Waktu Kuadratik) 🐢
 
-[cite\_start]Waktu eksekusi algoritma ini sebanding dengan **kuadrat** dari ukuran input[cite: 387]. [cite\_start]Ini biasanya terjadi ketika ada loop di dalam loop (nested loop) pada data yang sama[cite: 380, 381]. Kinerjanya menurun drastis saat input bertambah.
+Waktu eksekusi algoritma ini sebanding dengan **kuadrat** dari ukuran input. Ini biasanya terjadi ketika ada loop di dalam loop (nested loop) pada data yang sama. Kinerjanya menurun drastis saat input bertambah.
 
   * **Analogi:** Membandingkan setiap buku di rak dengan setiap buku lainnya untuk mencari duplikat. Jika ada 10 buku, Anda melakukan sekitar 10x10 = 100 perbandingan.
-  * [cite\_start]**Contoh Kode:** Loop bersarang untuk membandingkan setiap elemen dengan setiap elemen lainnya [cite: 379-382].
+  * **Contoh Kode:** Loop bersarang untuk membandingkan setiap elemen dengan setiap elemen lainnya.
 
 <!-- end list -->
 
@@ -133,7 +133,7 @@ quadratic_example(colors)
 
 ### Visualisasi Perbandingan Big O
 
-[cite\_start]Grafik di bawah ini menunjukkan bagaimana waktu eksekusi (jumlah operasi) meningkat seiring dengan bertambahnya ukuran input untuk setiap kompleksitas[cite: 323]. Perhatikan betapa cepatnya kurva $O(n^2)$ dan yang lebih lambat menanjak\!
+Grafik di bawah ini menunjukkan bagaimana waktu eksekusi (jumlah operasi) meningkat seiring dengan bertambahnya ukuran input untuk setiap kompleksitas. Perhatikan betapa cepatnya kurva $O(n^2)$ dan yang lebih lambat menanjak\!
 
 Grafik ini dengan jelas menunjukkan bahwa algoritma dengan kompleksitas $O(1)$ dan $O(\\log n)$ adalah yang paling efisien untuk input berukuran besar, sementara $O(n^2)$ dan yang lebih buruk harus dihindari jika memungkinkan.
 
@@ -143,19 +143,19 @@ Grafik ini dengan jelas menunjukkan bahwa algoritma dengan kompleksitas $O(1)$ d
 
 Saat menganalisis kode, Anda mungkin mendapatkan ekspresi yang kompleks. Untungnya, ada aturan sederhana untuk menyederhanakannya.
 
-  * [cite\_start]**Aturan 1: Abaikan Konstanta** [cite: 493]
-    [cite\_start]Big O berfokus pada laju pertumbuhan, jadi kita mengabaikan angka pengali[cite: 501].
+  * **Aturan 1: Abaikan Konstanta** 
+    Big O berfokus pada laju pertumbuhan, jadi kita mengabaikan angka pengali.
 
       * $O(2n)$ menjadi $O(n)$
-      * [cite\_start]$O(4+2n+2m)$ disederhanakan menjadi $O(n+m)$ [cite: 494]
+      * $O(4+2n+2m)$ disederhanakan menjadi $O(n+m)$ 
 
-  * [cite\_start]**Aturan 2: Abaikan Term Non-Dominan** [cite: 496]
-    [cite\_start]Kita hanya peduli pada bagian yang paling lambat (yang paling cepat tumbuh) saat `n` menjadi sangat besar[cite: 504].
+  * **Aturan 2: Abaikan Term Non-Dominan** 
+    Kita hanya peduli pada bagian yang paling lambat (yang paling cepat tumbuh) saat `n` menjadi sangat besar.
 
-      * [cite\_start]$O(n + n^2)$ menjadi $O(n^2)$ karena $n^2$ tumbuh jauh lebih cepat daripada $n$[cite: 497, 505].
+      * $O(n + n^2)$ menjadi $O(n^2)$ karena $n^2$ tumbuh jauh lebih cepat daripada $n$.
 
-  * [cite\_start]**Aturan 3: Gunakan Variabel Berbeda untuk Input Berbeda** [cite: 495]
-    [cite\_start]Jika sebuah fungsi memiliki dua input berbeda (misalnya, dua list dengan ukuran `n` dan `m`), gunakan kedua variabel tersebut dalam notasi Big O[cite: 495].
+  * **Aturan 3: Gunakan Variabel Berbeda untuk Input Berbeda** 
+    Jika sebuah fungsi memiliki dua input berbeda (misalnya, dua list dengan ukuran `n` dan `m`), gunakan kedua variabel tersebut dalam notasi Big O.
 
       * $O(n + m)$
 
